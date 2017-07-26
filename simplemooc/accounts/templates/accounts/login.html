@@ -1,0 +1,33 @@
+{% extends "home.html" %}
+{% load static %}
+{% block header %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="page-header" style="position: relative; top: 50px;">
+				<h3>Informe os seus dados para efetuar o Login</h3>
+			</div>
+			<form class="pure-form pure-form-aligned" style="position: relative; top: 50px;">
+				<fieldset>
+					{{form.non_field_errors}}
+
+					{% for field in form %}
+					<div class="pure-control-group">
+						{{field.label_tag}}
+						{{field}}
+						{{field.errors}}
+					</div>
+					{% endfor %}
+					<button type="submit" class="btn btn-primary" style="position: relative;left: 100px;">Entrar</button>
+				</fieldset>
+			</form>
+			<div class="lembrar">
+				Não é cadastrado?<a href="">Cadastre-se</a><br>
+				Esqueceu a senha?<a href="">Nova Senha</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

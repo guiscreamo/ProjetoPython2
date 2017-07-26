@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+	<title>Simplemooc</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+					<span class="sr-only">Navegação</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="{% url 'core:index' %}" class="navbar-brand">SimpleMooc</a>
+			</div><!-- ./navbar-header -->
+
+			<div class="collapse navbar-collapse" id="menu">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="{% url 'core:index' %}">Home</a></li>
+					<li><a href="{% url 'courses:index' %}">Cursos</a></li>
+					<li><a href="{% url 'contato' %}">Contato</a></li>
+					<li><a href="{% url 'accounts:login' %}">Logar</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav><!-- ./ NAV MENU -->
+
+	{% block header %}{% endblock %}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

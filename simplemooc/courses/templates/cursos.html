@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+{% load static %}
+{% block header %}
+
+<div class="container-fluid">
+	<h3 id="cursos">Listagem de Cursos Do Simplemooc</h3><br>
+	<h4>Abaixo a lista de cursos disponíveis na plataforma</h4>
+</div>
+<div class="container-fluid">
+	{% for course in courses %}
+	<div class="row cursos-imagem">
+		<div class="col-sm-3">
+		{% if course.image %}
+			<a href="{% url 'courses:details' course.slug %}">
+			<img src="{{course.image.url}}" class="img-responsive">
+		{% else %}
+			<img src="{% static 'img/img.jpg' %}" class="img-responsive">
+		{% endif %}
+			</a>
+		</div>
+		<div class="col-sm-9 descricao">
+			<h2>{{course.name}}</h2>
+			<h3>{{course.description}}</h3>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
