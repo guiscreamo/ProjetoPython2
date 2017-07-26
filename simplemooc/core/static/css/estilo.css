@@ -85,7 +85,7 @@ body .primary-button {
     font-size: 80%;
     position: absolute;
     width: 100%;
-    margin-bottom: 0;
+    bottom: 0;
 }
 @media(max-width: 768px){
     .footer-details{

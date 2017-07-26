@@ -140,3 +140,10 @@ EMAIL_HOST_PASSWORD = 'senha'
 EMAIL_PORT = 587
 
 CONTACT_EMAIL = 'trem.teste@teste.com'
+
+#LOGIN
+
+
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'core:index'
+LOGOUT_URL = 'accounts:logout'
